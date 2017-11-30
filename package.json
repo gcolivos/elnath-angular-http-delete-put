@@ -1,5 +1,5 @@
 {
-  "name": "elnath-angular-http",
+  "name": "elnath-angular-http-delete-put",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gcolivos/elnath-angular-http.git"
+    "url": "git+https://github.com/gcolivos/elnath-angular-http-delete-put.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gcolivos/elnath-angular-http/issues"
+    "url": "https://github.com/gcolivos/elnath-angular-http-delete-put/issues"
   },
-  "homepage": "https://github.com/gcolivos/elnath-angular-http#readme",
+  "homepage": "https://github.com/gcolivos/elnath-angular-http-delete-put#readme",
   "dependencies": {
     "angular": "^1.6.7",
     "body-parser": "^1.18.2",
