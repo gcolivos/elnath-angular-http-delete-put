@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Angular HTTP Intro. Also Food.</title>
+    <script src="/vendors/angular.js"></script>
+    <script src="/scripts/client.js"></script>
 </head>
-<body>
+
+<body ng-app="RestaurantApp" ng-controller="FoodController as vm">
+    <p>vm.message: {{vm.message}}</p>
+    <p>vm.foodArray: {{vm.foodArray}}</p>
+
     <H1>Angular HTTP Intro. Also Food.</H1>
+    <H2>Food List</H2>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="food in vm.foodArray">
+            {{food.name}}
+            <span ng-show="food.is_hot">is really hot</span>
+            <!-- if ng-show is true then the span shows -->
+            <span ng-hide="food.is_hot">is not that hot</span>
+            <!-- <span>"is not that hot"</span> -->
+            <!-- ng-show and ng-if do basically the same thing -->
+            and {{food.deliciousness_rating > 80 ? "is really really delicious" : "is ok"}}
+        </li>
+    </ul>
+
+    <h3>Add a new food</h3>
+    <input type="text" ng-model="vm.newFood.name" placeholder="Food Name" />
+    <input type="number" ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness Rating"/>
+    <label>Is it hot?</label>
+    <input type="checkbox" ng-model="vm.newFood.is_hot" />
+    {{vm.newFood}}
+    <button ng-click = "vm.addNewFood(vm.newFood)"></button>
 </body>
+
 </html>
