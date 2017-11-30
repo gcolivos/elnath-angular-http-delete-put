@@ -35,4 +35,26 @@ app.controller('FoodController', ['$http', function ($http) {
             self.getFood();
         })
     };
+
+    self.deleteFood = function (id) {
+        $http({
+            method: 'DELETE',
+            url: '/food/' + id
+               
+        }).then(function(response){
+            console.log('response', response.data);
+            self.getFood();
+        })
+    };
+
+    self.updateTemp = function (id) {
+        $http({
+            method: 'PUT',
+            url: '/food/' + id,
+               
+        }).then(function(response){
+            console.log('added food', response.data);
+            self.getFood();
+        })
+    };
 }]);

@@ -25,16 +25,23 @@
             <!-- <span>"is not that hot"</span> -->
             <!-- ng-show and ng-if do basically the same thing -->
             and {{food.deliciousness_rating > 80 ? "is really really delicious" : "is ok"}}
+            <label>Delete food?</label>
+            <button ng-click="vm.deleteFood(food.id)"></button>
+            <label>Change temperature?</label>
+            <button ng-click="vm.updateTemp(food.id)"></button>
         </li>
     </ul>
-
-    <h3>Add a new food</h3>
-    <input type="text" ng-model="vm.newFood.name" placeholder="Food Name" />
-    <input type="number" ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness Rating"/>
-    <label>Is it hot?</label>
-    <input type="checkbox" ng-model="vm.newFood.is_hot" />
-    {{vm.newFood}}
-    <button ng-click = "vm.addNewFood(vm.newFood)"></button>
+    <div>
+        <h3>Add a new food</h3>
+        <input type="text" ng-model="vm.newFood.name" placeholder="Food Name" />
+        <input type="number" ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness Rating" />
+        <label>Is it hot?</label>
+        <input type="checkbox" ng-model="vm.newFood.is_hot" />
+        <label>Add food?</label>
+        <button ng-click="vm.addNewFood(vm.newFood)"></button>
+    </div>
+    </select>
 </body>
+
 
 </html>
